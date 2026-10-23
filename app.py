@@ -1,14 +1,12 @@
+
 import streamlit as st
 import pickle
 import pandas as pd
 
-st.set_page_config(
-    page_title="Mobile Price Predictor",
-    page_icon="📱"
-)
+st.set_page_config(page_title="Mobile Price Predictor", page_icon="📱")
 
 st.title("📱 Mobile Price Prediction")
-st.write("Predict a mobile phone's price range and estimated price.")
+st.write("Enter mobile specifications to predict its price range and estimated price.")
 
 @st.cache_resource
 def load_models():
@@ -17,4 +15,5 @@ def load_models():
 
 models = load_models()
 
-st.success("Models loaded successfully!")
+st.success("Model file loaded successfully!")
+st.info("The prediction form will be added after we confirm your model's feature columns.")
