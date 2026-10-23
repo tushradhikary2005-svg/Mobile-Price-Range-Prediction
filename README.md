@@ -25,5 +25,4 @@ streamlit run app.py
 
 ### Author
 Tushar Adhikary
-Chandigarh University
-CSE (Cyber Security)
+CSE
