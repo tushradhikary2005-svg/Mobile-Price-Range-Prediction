@@ -1,14 +1,14 @@
 
+
 import streamlit as st
-import pickle
+import joblib
 import pandas as pd
 
 st.set_page_config(page_title="Mobile Price Predictor", page_icon="📱")
 
 @st.cache_resource
 def load_models():
-    with open("mobile_price_models_compressed.pkl", "rb") as f:
-        return pickle.load(f)
+    return joblib.load("mobile_price_models_compressed.pkl")
 
 models = load_models()
 range_model = models["price_range_model"]
@@ -17,7 +17,6 @@ price_model = models["price_model"]
 st.title("📱 Mobile Price Prediction")
 st.write("Enter mobile specifications below.")
 
-st.subheader("Mobile Specifications")
 
 phone_weight = st.number_input("Phone Weight (g)", 100.0, 400.0, 200.0)
 rear_camera_mp = st.number_input("Rear Main Camera (MP)", 2.0, 250.0, 50.0)
